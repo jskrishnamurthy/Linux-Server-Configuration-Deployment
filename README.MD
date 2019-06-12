@@ -347,6 +347,17 @@ The following prompt will be returned:
 
 - Open your browser to http://54.148.203.211.xip.io
 
+### Step 19: To disable remote login of the root user
+
+- While logged in as `grader`,``` sudo nano  /etc/ssh/sshd_config ```
+- uncomment the directive `PermitRootLogin` and set its value to `no`
+- Save and Exit
+- To Verify, ``` grep -i PermitRootLogin /etc/ssh/sshd_config ```
+- The command should return something like this:
+```
+PermitRootLogin no
+# the setting of "PermitRootLogin without-password".
+```
 
 ## Useful commands
 
@@ -356,4 +367,4 @@ The following prompt will be returned:
 
 - DigitalOcean [How To Deploy a Flask Application on an Ubuntu VPS](https://www.digitalocean.com/community/tutorials/how-to-deploy-a-flask-application-on-an-ubuntu-vps)
 - Troubleshoot mod_wsgi [Link](https://github.com/jungleBadger/-nanodegree-linux-server-troubleshoot/tree/master/python3%2Bvenv%2Bwsgi)
-
+- [4 Ways to Disable Root Account in Linux](https://www.tecmint.com/disable-root-login-in-linux/)
